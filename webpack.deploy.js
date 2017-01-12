@@ -36,7 +36,7 @@ module.exports = {
         path:__dirname+'/build/',
         filename: '[name].js',
         chunkFilename: '[name].chunk.js',
-        publicPath:'./build/'
+        publicPath:''
     },
     module: {
         loaders: [
