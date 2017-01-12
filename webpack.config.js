@@ -14,6 +14,16 @@ var APP_PATH = path.resolve(ROOT_PATH,'js');
 var BUILD_PATH = path.resolve(ROOT_PATH,'build');
 
 
+
+
+var API={
+    test: 'http://test.api.xx.com',
+	production: 'http://api.xx.com',
+	development: 'http://dev.api.xx.com'
+}
+
+
+
 module.exports = {
     devtool: 'inline-source-map',
     entry: {
@@ -25,7 +35,7 @@ module.exports = {
         shared:['react','react-router','react-grid-layout','material-ui']
     },
     output: {
-        path:__dirname+'/build',
+        path:__dirname+'/build/',
         filename: '[name].js',
         chunkFilename: '[name].chunk.js',
         publicPath:'./build/'
@@ -38,6 +48,7 @@ module.exports = {
                 exclude: /node_modules/,
                 loaders: ['react-hot','babel-loader?presets[]=es2015&presets[]=react']
             },
+
             //need to lazy loading  that need this load to isolate the file chunk
             {
                 test: /\.js$/,
